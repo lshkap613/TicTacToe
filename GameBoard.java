@@ -96,7 +96,7 @@ public class GameBoard {
 		
 		/*
 		 * Search through every cell in row of the last mark placed by 
-		 * human to see if it contains anything but the human player's
+		 * player to see if it contains anything but the that player's
 		 * mark. 
 		 */
 		for (int rowCell = 0; rowCell < this.dimension; rowCell++) {
@@ -109,12 +109,12 @@ public class GameBoard {
 				break;
 			}
 		}
-		// Otherwise, human won and true is returned.
+		// Otherwise, current player won and true is returned.
 		if(winner) return true;
 		
 		/* 
 		 * return variable reset to false, and process repeated for the
-		 * column of the last mark set down by the human player
+		 * column of the last mark set down by the player
 		 */
 		winner = true;
 		for (int colCell = 0; colCell < this.dimension; colCell++) {
@@ -126,9 +126,8 @@ public class GameBoard {
 		if (winner) return true;
 		
 		/*
-		 * If the last mark placed on the board by the human was along
-		 * the left-to-right diagonal line, repeat the process along
-		 * this line.
+		 * If the last mark placed on the board by the current player was along
+		 * the left-to-right diagonal line, repeat the process along this line.
 		 */
 		if (row == col) {
 			winner = true;
@@ -142,9 +141,8 @@ public class GameBoard {
 		}
 		
 		/*
-		 * If the last mark placed on the board by the human was along
-		 * the right-to-left diagonal line, repeat the process along
-		 * this line.
+		 * If the last mark placed on the board by the current player was along
+		 * the right-to-left diagonal line, repeat the process along this line.
 		 */
 		if (row + col == this.dimension - 1) {	
 			winner = true;
