@@ -46,8 +46,6 @@ public class test {
 			
 			int computerScore = computer.getScore();
 			computer = new Computer(ttt, gb, "Computer", 'O', computerScore);
-			players.enqueue(human);
-			players.enqueue(computer);
 		}
 		
 	}
